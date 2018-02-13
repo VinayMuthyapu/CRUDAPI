@@ -1,0 +1,75 @@
+<HTML>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery Practice</title>
+		<style>
+		#page
+		{
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
+			width:1000px;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("form").submit(function(event)
+			{
+						event.preventDefault();
+						var name=$("#name").val();
+						var email=$("#email").val();
+						var markup = "<tr><td><input type='checkbox' name='record'></td><td>"+name+"</td><td>"+email+"</td></tr>";
+						$("table tbody").append(markup);
+						$('#name').val('');
+						$('#email').val('');
+			});
+			$(".btn-primary").click(function()
+			{
+				$("table tbody").find('input[name = "record" ]').each(function()
+					{
+						if($(this).is(":checked"))
+						{
+							$(this).parents("tr").remove();
+						}
+					});
+			});
+		});
+		</script>
+	</head>
+	<body>
+	<div id="page">
+	<div class="container-fluid">
+		<form>
+			<input type="text" id="name" placeholder="Name" autofocus required >
+			<input type="text" id="email" placeholder="Email Address" required >
+			<input type="submit" class="btn btn-success" value="Add Row" Name="Add Row Button">
+			<input type="reset" class = "btn btn-warning">
+		</form>
+		<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr id="tablerow">
+					<th class="col-sm-1">Select</th>
+					<th class="col-sm-5">Name</th>
+					<th class="col-sm-6">Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" name="record"></td>
+					<td> vinay</td>
+					<td>vinay.muthyapu@gmail.com</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<button type="button" class="btn btn-primary">Delete Row</button>
+		</div>
+		</div>
+	</body>
+</HTML>
