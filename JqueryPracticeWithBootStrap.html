@@ -2,44 +2,102 @@
 	<head>
 		<meta charset="utf-8">
 		<title>JQuery Practice</title>
-		<<link rel="stylesheet" type="text/css" href="DynamicTable.css">
+		<link rel="stylesheet" type="text/css" href="DynamicTable.css">
+		<link rel="stylesheet" type="text/css"   href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css"   href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+		<link rel="stylesheet" type="text/css"   href="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css">
+		<link rel="stylesheet" type="text/css"   href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="Jquery.js"></script>
+		<script src="DynamicTable.js"></script>
+		
+		
+		
+		
+				<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+				<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+				<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+				<script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+				<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+				-->
+				
 	</head>
 	<body>
 	<div id="page">
 	<div class="container-fluid">
-		<form>
+		<!--<form>-->
 			<input type="text" id="name" placeholder="Name" autofocus required >
 			<input type="text" id="email" placeholder="Email Address" required >
-			<input type="submit" class="btn btn-success" value="Add Row" Name="Add Row Button">
+			<input type="button" class="btn btn-success" value="Add Row" Name="Add Row Button"></input>
 			<input type="reset" class = "btn btn-warning">
-		</form>
+		<!--</form>
+		<Button type="button" class="btn btn-success " id="AddRowButton"><span class="glyphicon glyphicon-plus">Add Row</Button>-->
 		
 		<div class="table-responsive">
-		<table class="table table-bordered">
+		<table id = "table" class="table table-bordered">
 			<thead>
-				<tr id="tablerow">
-					<th class="col-sm-1">Select</th>
-					<th class="col-sm-5">Name</th>
-					<th class="col-sm-6">Email</th>
+				<tr>
+					<!--<th>Select</th>-->
+					<th>Name</th>
+					<th>Email</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><input type="checkbox" name="record"></td>
-					<td> vinay</td>
-					<td>vinay.muthyapu@gmail.com</td>
+				<tr class="tblRow">
+					<!--<td><input type="checkbox" name="record"></td>-->
+					<td id="name_value"> vinay</td>
+					<td id="email_value">vinay.muthyapu@gmail.com</td>
 				</tr>
 			</tbody>
 		</table>
 		</div>
-		<button type="button" class="btn btn-primary">Delete Row</button>
-		<span class="context-menu-one btn btn-neutral">right click me</span>
+			<input type="text" id="column-name" placeholder="write column name here" >
+			<input type="button" id="Add-Column" value="Add-Column" class="btn btn-warning"></input>
+			<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span>Delete Row</button><br>
 		</div>
 		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--
+		<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th width="18%">Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+		-->
+		
+		
+		
+		
 	</body>
 </HTML>

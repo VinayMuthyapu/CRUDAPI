@@ -5,3 +5,11 @@
 			margin-top:50px;
 			width:1000px;
 		}
+	.table
+	{
+		margin-top:10px;
+	}
+	.highlight_row 
+	{
+		background: #eee;
+	}
