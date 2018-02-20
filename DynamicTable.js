@@ -28,8 +28,8 @@ $(document).ready(function()
 				{
 					var mkp = "<th>"+columnName+"</th>";
 					$("table thead tr").append(mkp);
+					$("table tbody tr").append("<td></td>");
 					$("#column-name").val('');
-					console.log(getRowCount);
 				}
 				else
 				{
@@ -65,6 +65,29 @@ $(document).ready(function()
 				}*/
 			});
 
+		$(function () {
+				$("#table").on('dblclick','td',function (e) {
+					e.stopPropagation();      //<-------stop the bubbling of the event here
+					var currentEle = $(this);
+					var value = $(this).html();
+					//console.log(value);
+					updateVal(currentEle, value);
+			});
+		});
+
+		function updateVal(currentEle, value) {
+			$(currentEle).html('<input class="thVal" type="text" value="' + value + '" />');
+			$(".thVal").focus();
+			$(".thVal").keyup(function (event) {
+				if (event.keyCode == 13) {
+					$(currentEle).html($(".thVal").val().trim());
+			}
+		});
+
+		$(document).click(function () { // you can use $('html')
+        $(currentEle).html($(".thVal").val().trim());
+		});
+		}
 			/*$("input[type='checkbox']").change(function (e)
 			{
 				if ($(this).is(":checked"))
